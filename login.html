@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - ParchoBet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ParchoBet Login</title>
 </head>
 
-<body style="font-family:Arial,sans-serif;max-width:400px;margin:50px auto;">
+<body style="font-family:Arial;max-width:400px;margin:50px auto;">
 
 <h2 style="text-align:center;">ParchoBet Login</h2>
 
-<input
-  id="username"
-  type="text"
-  placeholder="Username"
-  style="width:100%;padding:10px;margin-bottom:10px;"
->
+<input id="username" type="text" placeholder="Username" style="width:100%;padding:10px;margin-bottom:10px;">
 
-<input
-  id="password"
-  type="password"
-  placeholder="Password"
-  style="width:100%;padding:10px;margin-bottom:15px;"
->
+<input id="password" type="password" placeholder="Password" style="width:100%;padding:10px;margin-bottom:10px;">
 
-<button
-  onclick="login()"
-  style="width:100%;padding:10px;background:#0070f3;color:white;border:none;border-radius:5px;cursor:pointer;">
-  Sign In
+<button id="loginBtn" style="width:100%;padding:10px;">
+Sign In
 </button>
 
-<p id="error" style="color:red;text-align:center;"></p>
+<p id="error" style="color:red;"></p>
 
 <script>
-function login() {
+document.getElementById("loginBtn").addEventListener("click", function () {
 
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+    var user = document.getElementById("username").value.trim();
+    var pass = document.getElementById("password").value.trim();
 
-  if (username === "VBALD88" && password === "1111") {
-    window.location.href = "index.html";
-  } else {
-    document.getElementById("error").innerHTML =
-      "Грешно потребителско име или парола!";
-  }
+    if (user === "VBALD88" && pass === "1111") {
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("error").textContent = "Грешно потребителско име или парола!";
+    }
 
-}
+});
 </script>
 
 </body>
