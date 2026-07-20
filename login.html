@@ -5,27 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - ParchoBet</title>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 400px; margin: 50px auto;">
 
-  <h2 style="text-align:center;">ParchoBet Login</h2>
+<body style="font-family:Arial,sans-serif;max-width:400px;margin:50px auto;">
 
-  <input
-    type="text"
-    placeholder="Username"
-    style="width:100%; padding:10px; margin-bottom:10px;"
-  >
+<h2 style="text-align:center;">ParchoBet Login</h2>
 
-  <input
-    type="password"
-    placeholder="Password"
-    style="width:100%; padding:10px; margin-bottom:15px;"
-  >
+<input
+  id="username"
+  type="text"
+  placeholder="Username"
+  style="width:100%;padding:10px;margin-bottom:10px;"
+>
 
-  <button
-    style="width:100%; padding:10px; background:#0070f3; color:white; border:none; border-radius:5px; cursor:pointer;"
-  >
-    Sign In
-  </button>
+<input
+  id="password"
+  type="password"
+  placeholder="Password"
+  style="width:100%;padding:10px;margin-bottom:15px;"
+>
+
+<button
+  onclick="login()"
+  style="width:100%;padding:10px;background:#0070f3;color:white;border:none;border-radius:5px;cursor:pointer;">
+  Sign In
+</button>
+
+<p id="error" style="color:red;text-align:center;"></p>
+
+<script>
+function login() {
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (username === "VBALD88" && password === "1111") {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("error").innerHTML =
+      "Грешно потребителско име или парола!";
+  }
+
+}
+</script>
 
 </body>
 </html>
